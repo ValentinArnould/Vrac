@@ -367,7 +367,7 @@ sudo a2enmod rewrite
 
 Avoir les permissions :
 chmod -R 777 /le_site_en_Laravel/storage
-changer .env :
+changer .env (faire ll dans la racine du site) :
 DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=0000
