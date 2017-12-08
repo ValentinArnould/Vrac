@@ -1,0 +1,615 @@
+https://choosealicense.com/
+https://www.laquadrature.net/fr
+http://histoire-internet.vincaria.net/
+
+//Presentation de deux logiciels ou oeuvres
+//Une Sous licence libre
+//Une sous licence propriétaire
+//Explication de la licence, du logiciel et des tenants et des aboutissants
+
+commandes bash :
+ls : affiche les fichiers et les dossiers
+cd : permet de naviguer dans l'arborescence
+cp : copie un fichier
+mv : déplace un fichier / dossier
+rm : supprime un dossier
+nano : édite ou crée un fichier
+cat interaction avec des fichiers
+https://fr.wikibooks.org/wiki/Programmation_Bash/Notions_essentielles_du_shell_bash#Ex.C3.A9cutions_simultan.C3.A9es
+
+#! /bin/bash = demande à utiliser le fichier avec /bash stocké dans /bin
+
+git = c’est le bien
+
+installer git
+git clone « l’url du git »
+git status = voir le dépôt
+git add « nom du fichier à add »
+git commit -m « commentaire » = sauver le changement en local
+git push origin « la branche » = pousser le changement sur la branche
+git branch = voir les branches
+git checkout « nom de la branche » = changer de brancher ou la créer (ensuite la pusher)
+git merge « une branche » = fusionne une branche dans la branche actuelle
+
+git init = crée un dépôt git dans un dossier
+git remote add origin « url du dépôt distant » = lie un dépôt distant au dépôt local
+
+https://raspbian-france.fr/cours/slides-git.html#/
+
+slack du groupe : https://akademy2017.slack.com/messages/C7DU962SY/team/U7FDBK4MC/
+
+
+header d’un fichier html :
+<!doctype html>
+<html lang=« fr »>
+<head>
+    <meta charset=« utf-8 »>
+<!--    <title>Titre de la page</title> -->
+<!--    <link rel=« stylesheet » href=« style.css »> -->
+<!--    <script src=« script.js »></script> -->
+
+</head>
+<body>
+
+</body>
+</html>
+
+
+<a href=«  » target=« _blank »>un lien</a>
+
+http://gs.statcounter.com/ (compteur d’utilisateurs internet et autres)
+
+js c’est marrant
+
+Bootstrap = framework complet
+fakeimg
+Bootsnip
+
+font awesome
+unsplash
+codrops
+
+
+swapi = api star wars pour des appels js
+séparer les scripts js du code html
+regex = c’est la vie (recherche de caractère dans des chaînes)
+jQuery = js simple
+http://keycode.info/ = donne le code des touches
+postman application = lit les informations d’url et les objets xml ou json
+
+clé igbd API : d6fc76cda5f73f23fb0c08c458c8ad9d
+https://api-2445582011268.apicast.io
+ARNOULD's App
+
+http://api.wecook.fr/
+
+ngrok
+
+ virtualbox = pas mal
+wamp = le mal (selon morgan)
+
+vagrant = le bien, logiciel de virtualisation, comme docker, exemple serveur
+créer un dossier
+terminal : « vagrant init »
+https://app.vagrantup.com/boxes/search
+
+nano Vagrantfile
+
+changer la ligne de config avec une boxe sur le lien à la place de « base »
+et dé commenter la config pour réseau sous la ligne contenant « IP »
+terminal : « vagrant up »
+« vagrant global-status »
+vagrant ssh = se connecte à la vagrant active (/!\ doit être lancé dans le dossier de la vagrant ciblée)
+« exit » = quitte l’interface (fonctionne aussi sous « super su »)
+« vagrant reload » = relance une vagrant
+
+IMPORTANT /!\ sudo nano /etc/apache2/envvars : changer www-data par ubuntu
+
+UTILE : si oublié de sudo un nano, ctrl+o vers un dossier utilisateur puis move
+
+sudo !! = tape la commande précédente avec sudo
+sudo apt-get install apache2 pour set le serveur
+
+dans la vagrant :
+sudo nano /etc/apache2/sits-available/000-default.conf = rajouter le dossier sur lequel
+pointer, après « /html/ »
+si on tape un url (voir en dessous), copier 000-def.conf pour changer la conf
+pour changer de fichier de conf, taper « sudo a2dissite » (apache2 disable site)
+demande quelle conf active désactiver,
+puis taper « sudo a2ensite » pour activer une conf
+en local :
+sudo nano /etc/hosts = rajouter « l'ip l’url_à_taper » pour pointer sur une ip
+avec un url custom
+
+vagrant package = sauvegarde une vagrant configurée pour être exportée
+vagrant box add la_boxe_ à_importer ./package.box = importe un boxe vagrant
+/!\ Importer avec le Vagrantfile et éléments custom (pas besoin du log)
+
+/!\ ET vérifier les noms de dossiers à CHAQUE appel
+
+Quel développeur es tu ?
+
+1/Tu arrives en formation de développeur :
+
+1 Allez, je suis prêt à apprendre à coder !			2 C’est ici pour apprendre à ouvrir word ?
+3 De toute façon, je n’apprendrai pas grand chose.	4 Vous pouvez répétez votre nom ?
+
+2/Tu abordes un langage inconnu :
+
+1 J’écoute le cours, je fais l’exercice, c’est bon j’ai compris.	2 Mais c’est de l’hébreu, j’y arriverai pas !.. Ah, je lis un fichier image ?
+3 C’est interprété ou compilé, y a une doc ? 4 Vous pouvez répéter le logiciel ?
+
+3/Un système d’exploitation :
+
+1 Il y a Mac, et ubuntu xenial.						2 Comment on ferme la fenêtre ?
+3 C’est pas comme arch ça, c’est trop facile.			4 Vous pouvez répéter pour la machine virtuelle ?
+
+4/Avec les autres :
+
+1 J’écoute les questions des autres, et la réponse.	2 Tu peux m’aider s’il te plaît ? *few moments later* Tu peux m’aider ?
+3 Regarde il faut faire ça … Et moi c’est pas Morgan…	4 Tu peux me répéter l’énoncé ?
+
+5/Le prof lance une référence humouristique :
+
+1 Je rigole, même si je n’ai pas compris.				2 Hein ? J’ai pas compris …
+3 Ah ah, -[--->+<]>-----.[------->++<]>+.--[--->+<]>--.+[---->+<]>+++.+[----->+<]>.------------.+++++++++++.[-->+<]>--------.								4 Vous pouvez répéter la blague ..?
+
+6/à la pause :
+
+1 Je sors, puis je rentre.							2 Premier à la machine à café !
+3 Je reste dans la salle, histoire d’avancer un peu.	4 Vous pouvez répéter l’heure de la pause ?
+
+7/Quand tu rentres chez toi :
+
+1 Je refais l’exercice, même si j’ai tout compris.		2 J’espère que ce sera plus facile demain.
+3 Je fait tout ce que j’ai à faire, autre que du code.		4 Vous pouvez … Ah bah non, zut …
+
+8/L’autonomie en TP :
+1 Je regarde le cours, je fais l’exercice.				2 Je demande tout à mon voisin.
+3 Je boucle un super code, puis je vais voir les autres. 4 Vous pouvez répéter pour les groupes ?
+
+9/Tu bloques sur un point :
+1 Je demande au professeur, et je fais ce qu’il dit.		2 J’appelle le prof toutes les 5 min.
+3 Je ne peux pas être bloqué, quelqu’un a forcément trouvé un fix sur stack overflow 4 Vous pouvez m’aider ?
+
+10/Le stage :
+1 Je vais appliquer tout ce que j’ai fait en formation.	2 J’espère que mon tuteur sera aussi bon que Morgan.
+3 Une formalité .. professionnelle.					4 Vous pouvez répéter les dates ?
+
+
+si un projet ne fonctionne pas :
+cd /var/www/html
+sudo chmod -R 777 ./le_projet
+donne les droits aux fichiers
+
+nouveau formateur (Stéphane ferry s.ferey@it-akademy.fr )
+c’est un hacker (ou spécialiste en cyber-sécurité)
+Nmap = scanne les ports d’un système
+
+sudo dpkg reconfigure phpmyadmin = permet de reconfigurer un package
+(ici phpmyadmin)
+
+sudo apt-get install apache2 mysql-server php7.0 phpmyadmin
+ou php5.6
+
+php.sh = site qui fait donne plein d’aide et de tuto
+
+DATABASE = base de données contenant des tables
+TABLE = base de données contenant des entrées (avec plusieurs attributs)
+CREATE DATABASE `la_base`;
+DROP DATABASE `la_base`;
+TRUNCATE TABLE `ma_table`; = supprime toutes les données d’une table (sans la supprimer)
+USE `la_base`;
+
+CREATE TABLE `la_base`.`doom_table` (
+`id` INT AUTOINCREMENT,
+`messages` TEXT,
+`created_at` DATE
+);
+
+INSERT INTO `madb`.`matable`
+( created_at,
+messages
+) VALUES (
+CURRENT_TIMESTAMP,
+‘hehe fool’, …)
+
+zestedusavoir.com = tutoriels
+
+refletcommunication.com = site responsive pas trop mal
+
+
+/!\ Un site doit pouvoir fonctionner sans son javascript
+javascript décore le site, il le complète.
+
+Utiliser MySQLWorkbench pour communiquer avec une BDD
+plus sécurisé qu’avec phpMyAdmin
+Permet de faire des diagrammes de BDD
+
+https://github.com/hakimel/reveal.js
+utiliser ce framework
+
+Ordonner les requêtes à une BDD :
+1 Effectuer la connexion à la BDD
+2 Récupération des données navigateur
+3 Génération de la requête SQL
+4 Consultation des résultats
+5 Représentation des résultats par rapport aux données utilisateur
+
+lister les appels BDD utiles :
+_ connexion user
+_ inscription user
+_ listing users
+_ update
+_ recherche
+
+Bootswatch = crée du code Bootstrap
+
+
+Blog
+
+Articles
+	Titre
+	Contenu -> JS : WYSIWYG
+	Date de parution
+	Date de maj
+	Status
+	Auteur
+	Tags
+	Catégorie
+	Commentaire
+
+Auteur (users)
+	Nom
+	Prénom
+	Email
+	Password
+	Status
+	ViadeoID
+	LinkedinID
+	SteamID
+	GithubID
+
+Tags
+	Label
+Catégorie
+	Label
+
+Commentaire
+	Pseudo
+	E-mail
+	Contenu
+	Date de création
+	Status
+Liste des articles (trier par date de parution DESC)
+	count du nombre de commentaire par article (article ID)
+L’affichage d’un article (id)
+	récupérer les catégories (article ID)
+	récupérer les tags de l’article (article ID)
+	(Table de Liaison 2 requêtes)
+	Récupère les infos auteur (user ID)
+	Commentaire de l’article (article ID)
+
+L’affichage d’un auteur (id)
+	Une liste d’article (user ID) (trier par date de parution DESC)
+
+Liste des articles par tags
+Liste des articles par catégories
+
+https://www.mockaroo.com/ = site qui génère de fausses données SQL
+http://www.generatedata.com/?lang=fr = génère des fausses données aussi
+
+pour choper des sites = theme bootstrap
+
+PuPHPPet = permet de créer une vagrant configurée (très long !!)
+
+si une vagrant ne marche pas, la réinstaller
+et quand on prend un vagrant, faut l’exporter, sinon on a rien pris.
+
+apache2
+php7.0
+mysql-server
+php7.0-mysql
+libapache2-mod-php7.0
+
+Prérequis pour laravel
+Pour voir les extensions qui sont installées
+php -m
+
+Rechercher
+sudo apt search php7.0 | grep xml
+Ici pour trouver une appli plus spécifique avec < | >
+(On peut prendre laravel homestead)
+A installer sur la vagrant
+sudo apt-get install php7.0-xml
+sudo apt-get install php7.0-mbstring
+sudo apt-get install unzip (pour dézipper)
+
+connaître 
+
+en une ligne :
+sudo apt-get install php7.0-xml php7.0-mbstring php7.0-mysql
+
+Installer composer sur la Vagrant (à installer depuis le site, pas avec apt-get -> vieille version)
+
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+
+composer dans le système :
+https://getcomposer.org/download/
+sudo php composer-setup.php --filename=composer —install-dir=/usr/local/bin
+composer create-project --prefer-dist laravel/laravel /le_chemin_du_site/le_site
+dans le dossier du site : php artisan = plein de modules pour le site
+
+composer en local d’un site :
+https://getcomposer.org/download:
+php composer-setup.php
+./composer.phar create-project --prefer-dist laravel/laravel le_site (ou ./ pour le dossier actuel)
+
+Modif du vHost fichier .conf :
+<VirtualHost *:80>
+        ServerName laravel.dev
+
+        DocumentRoot /var/www/html/blog/public
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        <Directory /var/www/html/blog/public>
+                AllowOverride All
+        </Directory>
+</VirtualHost>
+
+/!\ (Activer la réécriture d’url de serveur qui fait le lien entre toutes les pages)
+sudo a2enmod rewrite
+
+Avoir les permissions :
+chmod -R 777 /le_site_en_Laravel/storage
+changer .env :
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=0000
+Connexion à MySQL et création de table
+configurer la connexion mysql -> .env (a la racine) puis crée la BDD.
+
+
+php artisan serve
+
+php artisan make:auth (crée un login et un register)
+
+ensuite crée les tables avec : php artisan migrate.
+(pour rajouter une colone dans une table deja crée faire: 
+php artisan migrate:refresh
+
+
+rajout et creation d’une table:
+php artisan make:migration create_article_table
+
+/!\ https://laravel.com/docs/5.5/migrations
+
+$table->integer(‘status')->after('password'); = crée une colonne "int" nommée
+status après "password" dans la table locale
+
+php artisan migrate:rollback = reviens sur la dernière migration
+
+php artisan make:factory NomdeFactory = crée un générateur pour une table
+
+Dans une BDD, si une table est au pluriel, un modèle au singulier interagit avec.
+
+php artisan make:model LeNomDeLaTableAuSinglulier -c -f = crée un modèle qui gère une table
+
+./siteEnLaravel/routes/web.php = contient les routes vers des fonctions de page
+
+
+PHP Laravel :
+
+Migration  
+	PATH : database/migrations/<date>_<action>_<table>_table.php
+	CMD  : php artisan make:migration <action>_<table>_table
+    	TYPE : Objet PHP
+    	DOCS : https://laravel.com/docs/5.5/migrations
+	USE  : Versionning de Base de données
+
+Factory :
+	PATH : database/factories/<model>Factory.php
+    	CMD  : php artisan make:factory <model>Factory
+    	TYPE : PHP
+	DOCS : https://laravel.com/docs/5.5/database-testing#generating-factories
+	USE  : Template de génération de données pour le TEST
+
+Seeder :
+	PATH : database/seeds/<model>TableSeeder.php
+    	CMD  : php artisan make:seeder <model>TableSeeder
+    	TYPE : PHP
+    	DOCS : https://laravel.com/docs/5.5/seeding
+	USE  : Peupler la base de donnée avec la possibilité d'utiliser les Factories
+
+Model :
+	PATH : app/<model>.php
+    	CMD  : php artisan make:model <model>
+    	TYPE : PHP Objet
+    	DOCS : https://laravel.com/docs/5.5/eloquent
+	USE  : Représentation d'un enregistrement de la BDD au format PHP OBJET
+
+Controller :
+	PATH : app/Http/Controllers/<model>Controller.php
+    	CMD  : php artisan make:controller <model>Controller
+    	TYPE : PHP Objet
+    	DOCS : https://laravel.com/docs/5.5/controllers
+	USE  : Relation entre Model et la Vue (Code métier (ne pas confondre avec le code ROME de pole emploi))
+
+View :
+	PATH : ressources/views/<model>/<name>.blade.php
+    	CMD  : null
+    	TYPE : HTML / BLADE
+    	DOCS : https://laravel.com/docs/5.5/views
+	USE  : Faire l'affichage des données
+
+
+regarder Youtube : GraphicArt (youtubeur sur laravel)
+
+CRUD = CREATE READ UPDATE DELETE (les opérations nécessaires pour utiliser un serveur)
+
+node js = javascript côté serveur
+chrome v8 = fait tourner du node js
+
+
+npm init = crée un package.json
+npm install express --save = installe le framework et crée une dépendance au json qu'on a
+
+MongoDB = type de BDD différent de SQL, fonctionnant par fichier JSON, utilise des "collections"
+
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+npm install mongodb --save = installer mongoDB dans le projet express
+https://zellwk.com/blog/crud-express-mongodb/ = tuto de quelques bases là dessus
+http://expressjs.com/fr/guide/database-integration.html
+
+npm install nodemon = actualise le serveur à chaque changement
+(changer le package.json du projet et pour changer start : "node" en "nodemon")
+
+mongo = entre en mode Query à mongoDB       /!\Ne pas oublier les {} dans les parenthèses des fonctions, même vides
+    db = donne la base actuelle
+    use telle_base = permute/crée une BDD (changer depuis une base vide ne la sauvegarde pas)
+    db.la_base.insterOne({élément: valeur}) = insère un élément et sa valeur dans la BDD
+    db.la_bas.insertMany([{objet : valeur},{...},{...},{...}])
+    https://docs.mongodb.com/manual/tutorial/update-documents/
+    db.inventory.deleteMany({}) = efface toutes les données de la collection 'inventory'
+
+var ObjectId = require('mongodb').ObjectID; = pour utiliser la méthode ObjectID (sinon ne marche pas)
+
+quand express est installé et npm aussi,
+juste aller dans un dossier et taper "express" pui "npm install"
+
+Un serveur CRUD :
+
+READ :
+GET /movies -> send all movies from API
+GET /movie/?ID -> send one movie from API
+
+WRITE :
+POST /movie/new -> insert one movie
+
+DELETE :
+GET /movie/delete/?ID -> delete one movie
+
+UPDATE :
+POST /movie/update/?ID -> Update a Movie
+
+
+router.get('/chemin') et router.post('/chemin')
+
+
+Wordpress :
+
+apache2, mysql-server, php7.0, php7.0-mysql, libapache2-mod-php7.0
+
+Modifier l'utilisateur apache2 dans /etc/apache2/envvars, et
+remplacer LES "www-data" par "ubuntu"
+
+Pour la réécriture des URLs
+ sudo a2enmod rewrite
+
+Tout à la fin d'apache2.conf:
+<ifModule mod_rewrite.c>
+RewriteEngine On
+</ifModule>
+
+Dans le 000-default.conf:
+
+<Directory /var/www/html>
+   Options Indexes FollowSymLinks MultiViews
+   AllowOverride All
+   Order allow,deny
+   allow from all
+</Directory>
+
+mysql -uroot -p 
+
+
+PLUGINS VITAUX A INSTALLER:
+
+- Duplicator
+- Wordfence
+- Google Analytics
+
+On peut installer les plugins en ligne de command (dans le dossier wordpress) :
+
+wp plugin install LePulgin
+wp plugin activate LePlugin
+wp plugin delete LePlugin
+
+Pareil pour les themes :
+
+wp theme search (pour savoir les thème disponibles sur le wordpress local)
+wp theme install LeTheme
+wp theme activate LeTheme
+wp theme delete LeTheme
+
+
+Liste des paquets à installer en SSH:
+
+apache2, mysql-server, php7.0, php7.0-mysql, libapache2-mod-php7.0
+
+
+Installation en CLI:
+https://wp-cli.org/#installing
+
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+Pour vérifier qu'il est bien installé: 
+php wp-cli.phar --info
+
+chmod 777 wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
+Pour les droits
+
+wp core download
+Pour télécharger le tout
+
+wp config create (et voir le lien pour les paramètres)
+https://developer.wordpress.org/cli/commands/config/create/
+
+wp core install (et voir le lien pour les paramètres)
+https://developer.wordpress.org/cli/commands/core/install/
+
+= Un Wordpress tout frais
+
+
+https://codex.wordpress.org/fr:Th%C3%A8mes_Enfant
+https://www.hostinger.fr/tutoriels/creer-un-plugin-wordpress/
+
+Pour créer un thème enant :
+
+prendre un thème (en télécharger un sinon)
+créer un dossier dans "themes" avec le nom du thème parent + "-child"
+créer dedans "functions.php" et "style.css"
+functions.php :
+<?php
+
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+function theme_enqueue_styles() {
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/script.js');
+
+}
+
+ajoute une action qui permet d'appeler le css du thème parent, et un script JS dans le dossier js du thème enfant
+
+style.css :
+/*
+ Theme Name:   Twenty Fifteen Child
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  Twenty Fifteen Child Theme
+ Author:       John Doe
+ Author URI:   http://example.com
+ Template:     twentyfifteen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twenty-fifteen-child
+*/
+
+crée toutes les informations qui seront lues par Wordpress au sujet du thème
