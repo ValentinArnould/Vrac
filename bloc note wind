@@ -1,0 +1,140 @@
+apache2
+php7.0
+mysql-server
+php7.0-mysql
+libapache2-mod-php7.0
+
+Prérequis pour laravel
+Pour voir les extensions qui sont installées
+php -m
+
+Rechercher
+sudo apt search php7.0 | grep xml
+Ici pour trouver une appli plus spécifique avec < | >
+(On peut prendre laravel homestead)
+A installer sur la vagrant
+sudo apt-get install php7.0-xml
+sudo apt-get install php7.0-mbstring
+sudo apt-get install unzip (pour dézipper)
+
+connaître
+
+en une ligne :
+sudo apt-get install php7.0-xml php7.0-mbstring php7.0-mysql
+
+Installer composer sur la Vagrant (à installer depuis le site, pas avec apt-get -> vieille version)
+
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+
+composer dans le système :
+https://getcomposer.org/download/
+sudo php composer-setup.php --filename=composer —install-dir=/usr/local/bin
+composer create-project --prefer-dist laravel/laravel /le_chemin_du_site/le_site
+dans le dossier du site : php artisan = plein de modules pour le site
+
+composer en local d’un site :
+https://getcomposer.org/download:
+php composer-setup.php
+./composer.phar create-project --prefer-dist laravel/laravel le_site (ou ./ pour le dossier actuel)
+
+Modif du vHost fichier .conf :
+<VirtualHost *:80>
+        ServerName laravel.dev
+
+        DocumentRoot /var/www/html/blog/public
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        <Directory /var/www/html/blog/public>
+                AllowOverride All
+        </Directory>
+</VirtualHost>
+
+/!\ (Activer la réécriture d’url de serveur qui fait le lien entre toutes les pages)
+sudo a2enmod rewrite
+
+Avoir les permissions :
+chmod -R 777 /le_site_en_Laravel/storage
+changer .env (faire ll dans la racine du site) :
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=0000
+Connexion à MySQL et création de table
+configurer la connexion mysql -> .env (a la racine) puis crée la BDD.
+
+
+php artisan serve
+
+php artisan make:auth (crée un login et un register)
+
+ensuite crée les tables avec : php artisan migrate.
+(pour rajouter une colone dans une table deja crée faire:
+php artisan migrate:refresh
+
+
+rajout et creation d’une table:
+php artisan make:migration create_article_table
+
+/!\ https://laravel.com/docs/5.5/migrations
+
+$table->integer(‘status')->after('password'); = crée une colonne "int" nommée
+status après "password" dans la table locale
+
+php artisan migrate:rollback = reviens sur la dernière migration
+
+php artisan make:factory NomdeFactory = crée un générateur pour une table
+
+Dans une BDD, si une table est au pluriel, un modèle au singulier interagit avec.
+
+php artisan make:model LeNomDeLaTableAuSinglulier -c -f = crée un modèle qui gère une table
+
+./siteEnLaravel/routes/web.php = contient les routes vers des fonctions de page
+
+
+PHP Laravel :
+
+Migration
+	PATH : database/migrations/<date>_<action>_<table>_table.php
+	CMD  : php artisan make:migration <action>_<table>_table
+    	TYPE : Objet PHP
+    	DOCS : https://laravel.com/docs/5.5/migrations
+	USE  : Versionning de Base de données
+
+Factory :
+	PATH : database/factories/<model>Factory.php
+    	CMD  : php artisan make:factory <model>Factory
+    	TYPE : PHP
+	DOCS : https://laravel.com/docs/5.5/database-testing#generating-factories
+	USE  : Template de génération de données pour le TEST
+
+Seeder :
+	PATH : database/seeds/<model>TableSeeder.php
+    	CMD  : php artisan make:seeder <model>TableSeeder
+    	TYPE : PHP
+    	DOCS : https://laravel.com/docs/5.5/seeding
+	USE  : Peupler la base de donnée avec la possibilité d'utiliser les Factories
+
+Model :
+	PATH : app/<model>.php
+    	CMD  : php artisan make:model <model>
+    	TYPE : PHP Objet
+    	DOCS : https://laravel.com/docs/5.5/eloquent
+	USE  : Représentation d'un enregistrement de la BDD au format PHP OBJET
+
+Controller :
+	PATH : app/Http/Controllers/<model>Controller.php
+    	CMD  : php artisan make:controller <model>Controller
+    	TYPE : PHP Objet
+    	DOCS : https://laravel.com/docs/5.5/controllers
+	USE  : Relation entre Model et la Vue (Code métier (ne pas confondre avec le code ROME de pole emploi))
+
+View :
+	PATH : ressources/views/<model>/<name>.blade.php
+    	CMD  : null
+    	TYPE : HTML / BLADE
+    	DOCS : https://laravel.com/docs/5.5/views
+	USE  : Faire l'affichage des données
