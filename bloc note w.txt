@@ -364,6 +364,8 @@ Modif du vHost fichier .conf :
 
 /!\ (Activer la réécriture d’url de serveur qui fait le lien entre toutes les pages)
 sudo a2enmod rewrite
+IMPORTANT /!\ sudo nano /etc/apache2/envvars : changer www-data par ubuntu
+sudo chown -R ubuntu:ubuntu /var/www/html/
 
 Avoir les permissions :
 chmod -R 777 /le_site_en_Laravel/storage
