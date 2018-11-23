@@ -1,0 +1,55 @@
+Cours javascript :
+
+langage POO
+avec des constructeurs
+inventé en 1995 sous le nom de ECMAScript (aujourd'hui js = ES6)
+
+en JS :
+var = déclaration normale
+const = variable constante
+let = variable courante (si dans un if, la variable n'est utilisable que dans le if)
+function uneFonc() {code} = crée une fonction
+console.log('phrase ${variable}') = affiche des données dans la console et inclut une variable
+
+document.querySelector(#id ou .class ou autre);
+
+bonne pratique : mettre une fonction dans une variable constante pour l'utiliser derrière
+
+const character = function ShowAcharacterFromSomewhere() { }
+
+character();
+
+prendre des données d'une api simple :
+    fetch("url d'appel api").then(function(response) {
+        //debugger;
+        return response.json();
+    }).then(function(data) {
+        //debugger; utiliser data pour les données
+    });
+
+prendre des données d'une api complexe :
+utiliser l'application Postman, et lire attentivement la doc pour les headers et paramètres
+exemple :
+const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://euw1.api.riotgames.com/lol/summoner/v3/summoners/by-name/Kronosun",
+    "method": "GET",
+    "headers": {
+      "Origin": "",
+      "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+      "Accept-Language": "en-US,en;q=0.5",
+      "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:63.0) Gecko/20100101 Firefox/63.0",
+      "X-Riot-Token": "RGAPI-39a42e71-1a7c-4eb5-9511-b4e308a226e1"
+    }
+  }
+$.ajax(settings).done(function (response) {
+        //console.log(response);
+        return response.json();
+      });
+/!\ L'utilisation de headers nécessite souvent un traitement back end (ne fonctionne par sur une page statique)
+
+Le localStorage fonctionne comme les variables de session, mais sans s'initialiser et peut être modifié par l'utilisateur :
+
+localStorage.setItem('cle', `${variable}`); //on peut aussi rentrer la valeur en dur
+localStorage.getItem('cle');
